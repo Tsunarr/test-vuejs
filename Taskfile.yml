@@ -1,0 +1,10 @@
+# https://taskfile.dev
+
+dotenv:
+  - ".env"
+includes:
+  init: ./.config/taskfile/init/init.yml
+  bruno: ./.config/taskfile/bruno.yml
+  node: ./.config/taskfile/node.yml
+  mega-linter: ./.config/taskfile/mega-linter.yml
+version: "3"

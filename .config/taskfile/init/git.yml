@@ -1,0 +1,18 @@
+---
+version: "3"
+
+tasks:
+  ensure:
+    internal: true
+    status:
+      - npm --version
+    cmds:
+      - |
+        if which apt; then
+          sudo apt-get install git -y
+        elif which apk; then
+          sudo apk add git
+        else
+          echo "No package manager found"
+          exit 1
+        fi

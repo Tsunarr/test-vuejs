@@ -1,0 +1,26 @@
+---
+version: "3"
+
+tasks:
+  ensure:pip:
+    internal: true
+    status:
+      - pip3 --version
+    cmds:
+      - |
+        if which apt; then
+          sudo apt-get install python3-pip -y
+        elif which apk; then
+          sudo apk add py3-pip
+        else
+          echo "No package manager found"
+          exit 1
+        fi
+  ensure:pipx:
+    internal: true
+    deps:
+      - ensure:pip
+    status:
+      - pipx --version
+    cmds:
+      - sudo pip3 install pipx --break-system-packages

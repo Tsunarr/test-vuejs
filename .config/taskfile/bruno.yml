@@ -1,0 +1,15 @@
+---
+version: "3"
+
+includes:
+  node: init/node.yml
+
+tasks:
+  Jellyfin_PR:
+    cmds:
+      - bru run --env "Jellyfin_PR"
+    dir: "{{ .BRUNO_COLLECTIONS_DIR }}"
+    silent: true
+    requires:
+      vars:
+        - BRUNO_COLLECTIONS_DIR
