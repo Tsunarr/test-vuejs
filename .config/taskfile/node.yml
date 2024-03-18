@@ -2,16 +2,26 @@
 version: "3"
 
 tasks:
-  update:
+  .install:
+    internal: true
+    status:
+      - ls node_modules
+    cmds:
+      - npm install
+  .update:
+    internal: true
     cmds:
       - npm update
-  reinstall:
+  .reinstall:
+    internal: true
     cmds:
       - rm -rf node_modules
-      - npm install
-  run:
+      - task: install
+  .run:
+    internal: true
     cmds:
       - npm run serve
-  build:
+  .build:
+    internal: true
     cmds:
       - npm run build

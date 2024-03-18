@@ -28,5 +28,10 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: arduino/setup-task@v2
-      - name: "Install dependencies"
-        run: task init:ci
+      - name: "Build"
+        run: task build
+      - uses: actions/upload-artifact@v4
+        with:
+          name: conarr
+          path: dist/*
+          if-no-files-found: "error"

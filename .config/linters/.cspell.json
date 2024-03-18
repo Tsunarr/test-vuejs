@@ -14,7 +14,8 @@
     "**/megalinter-reports/**",
     "**/dist/**",
     "coverage.xml",
-    "LICENSE"
+    "LICENSE",
+    "CHANGELOG.md"
   ],
   "language": "en",
   "dictionaries": [

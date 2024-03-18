@@ -1,11 +1,11 @@
 # https://taskfile.dev
 
 includes:
-  git: git.yml
-  node: node.yml
-  bruno: bruno.yml
-  vuejs: vuejs.yml
-  commitizen: commitizen.yml
+  git: init/git.yml
+  node: init/node.yml
+  bruno: init/bruno.yml
+  vuejs: init/vuejs.yml
+  commitizen: init/commitizen.yml
 
 tasks:
   ci:

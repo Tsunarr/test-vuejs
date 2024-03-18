@@ -3,8 +3,36 @@
 dotenv:
   - ".env"
 includes:
-  init: ./.config/taskfile/init/init.yml
+  init: ./.config/taskfile/init.yml
   bruno: ./.config/taskfile/bruno.yml
   node: ./.config/taskfile/node.yml
   mega-linter: ./.config/taskfile/mega-linter.yml
 version: "3"
+
+tasks:
+  run:
+    silent: true
+    deps:
+      - install
+    cmds:
+      - task: node:.run
+  build:
+    silent: true
+    deps:
+      - install
+    cmds:
+      - task: node:.build
+  install:
+    silent: true
+    deps:
+      - init:ci
+    cmds:
+      - task: node:.install
+  test:megalinter-local:
+    silent: true
+    cmds:
+      - task: mega-linter:.local
+  test:megalinter-dv-wsl:
+    silent: true
+    cmds:
+      - task: mega-linter:.devcontainer_in_wsl
