@@ -18,7 +18,8 @@
         "tamasfe.even-better-toml",
         "task.vscode-task",
         "vivaxy.vscode-conventional-commits",
-        "Vue.volar"
+        "Vue.volar",
+        "vitest.explorer"
       ]
     }
   },

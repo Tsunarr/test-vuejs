@@ -36,3 +36,17 @@ tasks:
     silent: true
     cmds:
       - task: mega-linter:.devcontainer_in_wsl
+  test:vitest:
+    silent: true
+    cmds:
+      - npm run test
+  test:lint:
+    silent: true
+    cmds:
+      - npm run lint
+  tests:
+    deps:
+      - install
+    cmds:
+      - task: test:lint
+      - task: test:vitest
