@@ -28,7 +28,8 @@
     8082,
     "pyconarr:8000",
     "pyconarr:5000",
-    "spring-boot-admin:8080"
+    "spring-boot-admin:8080",
+    "wiremock:8080"
   ],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
@@ -37,7 +38,7 @@
   "portsAttributes": {
     "8082": {
       "label": "Frontend",
-      "onAutoForward": "openBrowser"
+      "onAutoForward": "openBrowserOnce"
     },
     "pyconarr:5000": {
       "label": "Backend pyctuator",
@@ -50,6 +51,10 @@
     "spring-boot-admin:8080": {
       "label": "Spring Boot Admin",
       "onAutoForward": "openBrowserOnce"
+    },
+    "wiremock:8080": {
+      "label": "Wiremock",
+      "onAutoForward": "silent"
     }
   },
   "postCreateCommand": "go-task init:dev",
