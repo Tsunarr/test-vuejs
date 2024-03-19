@@ -1,5 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
+  <div class="text-green-700 text-xl">Hello, from TailwindCSS!</div>
   <HelloWorld msg="Conarr"/>
 </template>
 

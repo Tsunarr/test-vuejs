@@ -69,7 +69,9 @@
     "vuex",
     "tdarr",
     "vitest",
-    "wiremock"
+    "wiremock",
+    "pcss",
+    "tailwindcss"
   ],
   "version": "0.2"
 }

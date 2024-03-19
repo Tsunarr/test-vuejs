@@ -4,7 +4,7 @@
     "url": "/v1/login",
     "bodyPatterns": [
       {
-        "matchesJsonPath": "$[?(@.Username == 'User_success')]"
+        "matchesJsonPath": "$[?(@.Username == 'User_failed')]"
       }
     ]
   },
