@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.Username == 'User_success')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 401,
+    "bodyFileName": "login_401.json"
+  }
+}

@@ -24,13 +24,7 @@
     }
   },
   "dockerComposeFile": "docker-compose.yml",
-  "forwardPorts": [
-    8082,
-    "pyconarr:8000",
-    "pyconarr:5000",
-    "spring-boot-admin:8080",
-    "wiremock:8080"
-  ],
+  "forwardPorts": [8082, "pyconarr:8000", "pyconarr:5000", "wiremock:8080"],
   "mounts": [
     "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
   ],
@@ -47,10 +41,6 @@
     "pyconarr:8000": {
       "label": "Backend API",
       "onAutoForward": "silent"
-    },
-    "spring-boot-admin:8080": {
-      "label": "Spring Boot Admin",
-      "onAutoForward": "openBrowserOnce"
     },
     "wiremock:8080": {
       "label": "Wiremock",

@@ -57,3 +57,6 @@ IGNORE_GITIGNORED_FILES: true
 
 FILTER_REGEX_EXCLUDE: (CHANGELOG.md|.config/linters/.+|\.gitignore|\.github/.*|\.git/.*|\.vscode/.*|\.megalinter.yml|LICENSE)
 SPELL_LYCHEE_FILTER_REGEX_EXCLUDE: (public/index.html)
+JAVASCRIPT_ES_FILTER_REGEX_EXCLUDE: (tests/.*)
+JSON_V8R_FILTER_REGEX_EXCLUDE: (wiremock/.*|.devcontainer/.*|./package-lock.json)
+JAVASCRIPT_STANDARD_FILTER_REGEX_EXCLUDE: (tests/.*)

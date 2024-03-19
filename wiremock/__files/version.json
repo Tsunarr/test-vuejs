@@ -1,0 +1,8 @@
+{
+  "jellyfin": {
+    "version": "WireMock"
+  },
+  "conarr": {
+    "version": "WireMock"
+  }
+}

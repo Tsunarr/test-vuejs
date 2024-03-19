@@ -13,9 +13,9 @@
     ".mega-linter.yml",
     "**/megalinter-reports/**",
     "**/dist/**",
-    "coverage.xml",
-    "LICENSE",
-    "CHANGELOG.md"
+    "**/coverage.xml",
+    "**/LICENSE",
+    "**/CHANGELOG.md"
   ],
   "language": "en",
   "dictionaries": [
@@ -67,7 +67,9 @@
     "Avenir",
     "dotenv",
     "vuex",
-    "tdarr"
+    "tdarr",
+    "vitest",
+    "wiremock"
   ],
   "version": "0.2"
 }
