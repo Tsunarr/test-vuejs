@@ -1,6 +1,8 @@
 import { createApp } from 'vue'
+import './tailwind.pcss'
+import router from './router'
 import App from './App.vue'
 
-import './tailwind.pcss'
-
-createApp(App).mount('#app')
+const app = createApp(App)
+app.use(router)
+app.mount('#app')
