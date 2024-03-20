@@ -1,0 +1,24 @@
+# https://taskfile.dev
+
+includes:
+  git: init/git.yml
+  node: init/node.yml
+  bruno: init/bruno.yml
+  vuejs: init/vuejs.yml
+  commitizen: init/commitizen.yml
+
+tasks:
+  ci:
+    silent: true
+    cmds:
+      - echo "Initializing environment"
+      - task: git:ensure
+      - task: vuejs:ensure
+  dev:
+    silent: true
+    cmds:
+      - task: ci
+      - task: bruno:ensure
+      - task: commitizen:ensure
+      - task: node:install:modules
+version: "3"

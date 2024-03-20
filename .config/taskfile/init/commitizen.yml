@@ -1,0 +1,15 @@
+---
+version: "3"
+
+includes:
+  python: python.yml
+
+tasks:
+  ensure:
+    internal: true
+    status:
+      - cz version
+    deps:
+      - python:ensure:pipx
+    cmds:
+      - pipx install commitizen

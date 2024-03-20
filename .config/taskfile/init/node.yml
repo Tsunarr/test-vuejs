@@ -1,0 +1,24 @@
+---
+version: "3"
+
+tasks:
+  ensure:npm:
+    internal: true
+    status:
+      - npm --version
+    cmds:
+      - |
+        if which apt; then
+          sudo apt-get install npm -y
+        elif which apk; then
+          sudo apk add npm
+        else
+          echo "No package manager found"
+          exit 1
+        fi
+  install:modules:
+    internal: true
+    status:
+      - ls node_modules
+    cmds:
+      - npm install

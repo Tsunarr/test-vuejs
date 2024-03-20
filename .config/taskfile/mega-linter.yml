@@ -1,0 +1,16 @@
+---
+version: "3"
+
+tasks:
+  .local:
+    internal: true
+    cmds:
+      - docker run --pull=always --rm -v "${LOCALWORKSPACE}:$(pwd)" -w
+        "$(pwd)" -e DEFAULT_WORKSPACE="$(pwd)" oxsecurity/megalinter:v7
+    silent: true
+  .devcontainer_in_wsl:
+    internal: true
+    cmds:
+      - docker run --pull=always --rm -v '\\wsl.localhost\Ubuntu\'"${LOCALWORKSPACE}:$(pwd)" -w
+        "$(pwd)" -e DEFAULT_WORKSPACE="$(pwd)" oxsecurity/megalinter:v7 --help
+    silent: true

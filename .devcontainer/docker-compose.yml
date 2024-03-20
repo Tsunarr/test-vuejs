@@ -1,0 +1,20 @@
+---
+version: "3"
+
+services:
+  conarr:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ..:/workspace
+    command: /bin/sh -c "sleep infinity"
+  pyconarr:
+    image: tsuna77/pyconarr:0.2.2a12
+    volumes:
+      - ../.config/pyconarr:/home/pyconarr/config/
+  wiremock:
+    image: wiremock/wiremock
+    command: "--global-response-templating --verbose"
+    volumes:
+      - ../wiremock:/home/wiremock

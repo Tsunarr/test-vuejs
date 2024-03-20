@@ -1,0 +1,58 @@
+{
+  "$schema": "https://raw.githubusercontent.com/devcontainers/spec/main/schemas/devContainer.base.schema.json",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "bennycode.sort-everything",
+        "bruno-api-client.bruno",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "GitHub.copilot",
+        "github.vscode-github-actions",
+        "mhutchie.git-graph",
+        "mikestead.dotenv",
+        "ms-azuretools.vscode-docker",
+        "ms-vsliveshare.vsliveshare",
+        "redhat.vscode-yaml",
+        "streetsidesoftware.code-spell-checker",
+        "tamasfe.even-better-toml",
+        "task.vscode-task",
+        "vivaxy.vscode-conventional-commits",
+        "Vue.volar",
+        "vitest.explorer"
+      ]
+    }
+  },
+  "dockerComposeFile": "docker-compose.yml",
+  "forwardPorts": [8082, "pyconarr:8000", "pyconarr:5000", "wiremock:8080"],
+  "mounts": [
+    "source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"
+  ],
+  "name": "Conarr - Test IHM VueJS",
+  "portsAttributes": {
+    "8082": {
+      "label": "Frontend",
+      "onAutoForward": "openBrowserOnce"
+    },
+    "pyconarr:5000": {
+      "label": "Backend pyctuator",
+      "onAutoForward": "silent"
+    },
+    "pyconarr:8000": {
+      "label": "Backend API",
+      "onAutoForward": "silent"
+    },
+    "wiremock:8080": {
+      "label": "Wiremock",
+      "onAutoForward": "silent"
+    }
+  },
+  "postCreateCommand": "go-task init:dev",
+  "privileged": true,
+  "remoteEnv": {
+    "LOCALWORKSPACE": "${localWorkspaceFolder}"
+  },
+  "remoteUser": "vscode",
+  "service": "conarr",
+  "workspaceFolder": "/workspace"
+}

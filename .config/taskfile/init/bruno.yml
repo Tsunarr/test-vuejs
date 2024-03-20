@@ -1,0 +1,15 @@
+---
+version: "3"
+
+includes:
+  node: node.yml
+
+tasks:
+  ensure:
+    internal: true
+    deps:
+      - node:ensure:npm
+    status:
+      - bru --version
+    cmds:
+      - sudo npm install -g @usebruno/cli

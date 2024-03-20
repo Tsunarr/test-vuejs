@@ -1,0 +1,52 @@
+# https://taskfile.dev
+
+dotenv:
+  - ".env"
+includes:
+  init: ./.config/taskfile/init.yml
+  bruno: ./.config/taskfile/bruno.yml
+  node: ./.config/taskfile/node.yml
+  mega-linter: ./.config/taskfile/mega-linter.yml
+version: "3"
+
+tasks:
+  run:
+    silent: true
+    deps:
+      - install
+    cmds:
+      - task: node:.run
+  build:
+    silent: true
+    deps:
+      - install
+    cmds:
+      - task: node:.build
+  install:
+    silent: true
+    deps:
+      - init:ci
+    cmds:
+      - task: node:.install
+  test:megalinter-local:
+    silent: true
+    cmds:
+      - task: mega-linter:.local
+  test:megalinter-dv-wsl:
+    silent: true
+    cmds:
+      - task: mega-linter:.devcontainer_in_wsl
+  test:vitest:
+    silent: true
+    cmds:
+      - npm run test
+  test:lint:
+    silent: true
+    cmds:
+      - npm run lint
+  tests:
+    deps:
+      - install
+    cmds:
+      - task: test:lint
+      - task: test:vitest

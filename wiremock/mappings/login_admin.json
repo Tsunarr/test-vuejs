@@ -1,0 +1,15 @@
+{
+  "request": {
+    "method": "POST",
+    "url": "/v1/login",
+    "bodyPatterns": [
+      {
+        "matchesJsonPath": "$[?(@.Username == 'Admin_success')]"
+      }
+    ]
+  },
+  "response": {
+    "status": 200,
+    "bodyFileName": "login_success_admin.json"
+  }
+}

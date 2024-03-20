@@ -1,0 +1,10 @@
+{
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "task": {
+    "path": "go-task",
+    "outputTo": "terminal"
+  },
+  "markiscodecoverage.searchCriteria": "coverage.lcov",
+  "cSpell.import": [".config/linters/.cspell.json"]
+}
